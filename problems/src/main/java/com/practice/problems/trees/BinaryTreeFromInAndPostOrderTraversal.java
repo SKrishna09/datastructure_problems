@@ -3,6 +3,18 @@ package com.practice.problems.trees;
 import java.util.HashMap;
 
 public class BinaryTreeFromInAndPostOrderTraversal {
+	
+	/*Binary Tree From Inorder And Postorder
+	Given inorder and postorder traversal of a tree, construct the binary tree.
+	You may assume that duplicates do not exist in the tree. 
+	Input : 
+        Inorder : [2, 1, 3]
+        Postorder : [2, 3, 1]
+
+        Return : 
+            1
+           / \
+          2   3*/
 
 	public static TreeNode root;
 

@@ -17,7 +17,7 @@ public class CompareVersionNumbers {
 		int i = 0;
 		int j = 0;
 		
-		while(i <= j) {
+		/*while(i <= j) {
 			
 		}
 		
@@ -27,7 +27,7 @@ public class CompareVersionNumbers {
 			version = -1;
 		} else {
 			version = 0;
-		}
+		}*/
 		return version;
 	}
 

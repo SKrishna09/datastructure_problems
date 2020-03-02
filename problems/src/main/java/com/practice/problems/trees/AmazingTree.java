@@ -6,6 +6,41 @@ import java.util.List;
 import java.util.Queue;
 
 public class AmazingTree {
+	
+	/*Amazing Tree
+	Given a binary tree with root node pointer A and an integer B.
+	A number S is lost in the tree but you somehow find how to restore it.
+	S is formed by concatenating all the node values from left to right at level B.
+	Find and return the number S. If there are no nodes at level B then return an empty string.
+			Input 1:
+
+			       1
+			      / \
+			     2   3
+			    / \  \
+			   3   4  5
+
+			   B = 1
+
+			Output 1:
+			    "23"
+			    Explanation 1:
+			        Nodes at level 1: 2 and 3
+
+			Input 2:
+
+			       7
+			      / \
+			     2   3
+			    / \  \
+			   0   1  0
+
+			   B = 2
+
+			Output 1:
+			    "010"
+			    Explanation 1:
+			        Nodes at level 1: 0, 1,and 0    */		
 
 	public static TreeNode root;
 

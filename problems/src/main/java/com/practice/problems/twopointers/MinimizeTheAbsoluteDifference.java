@@ -2,6 +2,17 @@ package com.practice.problems.twopointers;
 
 public class MinimizeTheAbsoluteDifference {
 
+	/*Minimize the absolute difference
+	Given three sorted arrays A, B and C of not necessarily same sizes.
+	Calculate the minimum absolute difference between the maximum and minimum number from
+	the triplet a,b,c such that a, b, c belongs arrays A,B, C respectively.
+	i.e.minimize|max(a,b,c) - min(a,b,c) |.
+	A : [ 1, 4, 5, 8, 10 ]
+	B : [ 6, 9, 15 ]
+	C : [ 2, 3, 6, 6 ]
+	We get the minimum difference for a=5, b=6, c=6 as | max(a,b,c) - min(a,b,c) | = |6-5| = 1.
+	*/
+
 	public static void main(String[] args) {
 
 		int[] A = { 1, 4, 5, 8, 10 };
@@ -29,9 +40,9 @@ public class MinimizeTheAbsoluteDifference {
 			min = findMin(x, y, z);
 			max = findMax(x, y, z);
 
-			if(Math.abs((max - min)) < minimizedDifference)
+			if (Math.abs((max - min)) < minimizedDifference)
 				minimizedDifference = Math.abs((max - min));
-			
+
 			if (min == x) {
 				i++;
 			} else if (min == y) {

@@ -35,24 +35,56 @@ public class PalindromePairs {
 	
 	
 	public static void main(String[] args) {
-		String[] A = {"abcd", "dcba", "lls", "s", "sssll"};
-		solve(Arrays.asList(A));
+		String[] A = { "abcd", "dcba", "lls", "s", "sssll" };
+		List<ArrayList<Integer>> res = solve(Arrays.asList(A));
+		System.out.println(res.toString());
 	}
-	
-	public static List<ArrayList<Integer>> solve(List<String> A) {
-		Map<String,Integer> map = new HashMap<>();
-		List<String> list = new ArrayList<>();
-		int i = 0;
-		for(String str1 : A) {
-			map.put(str1, i++);
-			list.add(str1);
-		}
-		
-		for(String str2 : A) {
-			
-		}
-		
-		return null;
-    }
 
+	public static List<ArrayList<Integer>> solve(List<String> A) {
+		List<ArrayList<Integer>> res = new ArrayList<>();
+
+		Map<String, Integer> map = new HashMap<>();
+		for (int i = 0; i < A.size(); i++)
+			map.put(A.get(i), i);
+
+		for (int i = 0; i < A.size(); i++) {
+			String str = A.get(i);
+
+			for (int j = 0; j < str.length(); j++) {
+				String str1 = str.substring(0, j);
+				String str2 = str.substring(j);
+
+				if (isPalindrome(str1)) {
+					String revStr2 = new StringBuilder(str2).reverse().toString();
+					if(map.containsKey(revStr2) && i != map.get(revStr2)) {
+						ArrayList<Integer> ans = new ArrayList<>();
+						ans.add(map.get(revStr2));
+						ans.add(i);
+						res.add(ans);
+					}
+				}
+
+				if (isPalindrome(str2)) {
+					String revStr1 = new StringBuilder(str1).reverse().toString();
+					if(map.containsKey(revStr1) && i != map.get(revStr1)) {
+						ArrayList<Integer> ans = new ArrayList<>();
+						ans.add(map.get(revStr1));
+						ans.add(i);
+						res.add(ans);
+					}
+				}
+			}
+		}
+		return res;
+	}
+
+	private static boolean isPalindrome(String str) {
+		int left = 0;
+		int right = str.length() - 1;
+		while (left <= right) {
+			if (str.charAt(left++) != str.charAt(right--))
+				return false;
+		}
+		return true;
+	}
 }

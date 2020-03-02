@@ -26,7 +26,7 @@ public class RemoveKthNodeFromEndOfTheList {
 		System.out.println("Given LinkedList:::");
 		printLinkedList(h.node);
 
-		ListNode l = removeNthFromEnd(h.node, 2);
+		ListNode l = removeNthFromEnd(h.node, 3);
 
 		System.out.println("LinkedList after removal of the Kth node from the last of the list:::");
 		printLinkedList(l);
@@ -64,7 +64,6 @@ public class RemoveKthNodeFromEndOfTheList {
 		} else {
 			slow.next = null;
 		}
-		System.out.println("Remove the Kth node from the last of the list::" + slow.val);
 		return A;
 	}
 

@@ -3,6 +3,13 @@ package com.practice.problems.twopointers;
 import java.util.Arrays;
 
 public class FindTheClosestPairFromTwoSortedArrays {
+	
+	/*Find the closest pair from two sorted arrays
+	Given two sorted arrays of distinct integers, A and B, and an integer C, find and 
+	return the pair whose sum is closest to C and the pair has one element from each array. 
+	More formally, find A[i] and B[j] such that abs((A[i] + B[j]) - C) has minimum value. 
+	If there are multiple solutions find the one with minimum i and even if there are multiple values of j 
+	for the same i then return the one with minimum j.*/
 
 	public static void main(String[] args) {
 

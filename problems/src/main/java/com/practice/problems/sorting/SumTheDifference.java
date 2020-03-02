@@ -9,9 +9,10 @@ public class SumTheDifference {
 	public static int MOD = 1000000007;
 
 	public static void main(String[] args) {
-		int[] A = { 5, 4, 2 }; // ARRAY
-		solve(A);
-		maxMin(A,A.length);
+		int[] A = {4,15,4,4,15,18,20 }; // ARRAY
+		//solve(A);
+		//maxMin(A,A.length);
+		subUnsort(A);
 	}
 
 	public static int solve(int[] A) {
@@ -69,4 +70,35 @@ public class SumTheDifference {
 		System.out.println("SUM:::"+(max_sum - min_sum + MOD) % MOD);
 		return (max_sum - min_sum + MOD) % MOD;
 	}
+	 
+	public static int[] subUnsort(int[] A) {
+	        int currElement;
+	        int nextElement;
+	        
+	        int i = 0;
+	        int firstLargeIndex = -1;
+	        int lastIndex = -1;
+	        while(i < A.length - 1){
+	            currElement = A[i];
+	            nextElement = A[i+1];
+	            
+	            if(currElement > nextElement) {
+	            	if(firstLargeIndex < 0) {
+	            		firstLargeIndex = i;
+	            	}
+	            	lastIndex = i+1;
+	            }
+	            i++;    
+	        }
+	        int[] result;
+	        if(firstLargeIndex == -1){
+	            result = new int[1];
+	            result[0] = -1;
+	        }else{
+	            result = new int[2];
+	            result[0] = firstLargeIndex;
+	            result[1] = lastIndex;
+	        }
+	        return result;
+	    }
 }
